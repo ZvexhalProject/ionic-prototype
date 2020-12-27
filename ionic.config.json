@@ -1,7 +1,10 @@
 {
   "name": "ionic-forbenchtask",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }

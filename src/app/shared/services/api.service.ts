@@ -7,8 +7,8 @@ import { Product } from '../models/Product';
   providedIn: 'root'
 })
 export class ApiService {
-
-  private apiUrl: string = 'http://localhost:4000/graphql';
+  private apiUrl: string = 'http://10.0.2.2:4000/graphql';
+  //private apiUrl: string = 'http://localhost:4000/graphql';
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +19,9 @@ export class ApiService {
         let response: any = await this.http.post(this.apiUrl, payload,{headers: {'Content-Type' : 'application/json'}}).toPromise();
         resolve(new User(response.data.users[0].username,response.data.users[0].userpasswort));
       } catch(e){
+        console.log(e);
         reject("User not found");
+       
       }
     });
   }
@@ -50,13 +52,26 @@ export class ApiService {
         if(response.errors){
           throw Error(JSON.stringify(response.errors));
         }
-        
-        
         resolve();
       } catch(e){
         reject("Product could not be created");
       }
     });
+  }
+
+  public async testApi():Promise<void>{
+    return new Promise(async(resolve, reject)=>{
+      const payload: any = 42143819;
+
+      try{
+        let response:any = await this.http.get("http://calapi.inadiutorium.cz/api/v0/en/calendars/default/1994/9/1").toPromise();
+
+        console.log(response);
+        resolve();
+      }catch(e){
+        console.log(e);
+      }
+    })
   }
 
 }

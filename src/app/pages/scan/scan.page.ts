@@ -8,18 +8,18 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./scan.page.scss'],
 })
 export class ScanPage implements OnInit {
-  data: any;
+  public data: any;
 
   constructor(private barcodeScanner: BarcodeScanner, private modalController: ModalController) { }
 
   ngOnInit() {
   }
 
-  scan() {
+  public scan() {
     this.data = null;
     this.barcodeScanner.scan().then(barcodeData => {
       console.log('Barcode data', barcodeData);
-      this.data = barcodeData;
+      this.data = JSON.stringify(barcodeData);
     }).catch(err => {
       console.log('Error', err);
     });

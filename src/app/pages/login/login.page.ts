@@ -14,7 +14,8 @@ export class LoginPage implements OnInit {
   public errorMsg: string = '';
   constructor(private apiService: ApiService, private router: Router) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.apiService.testApi();
   }
 
   public async loginPressed(): Promise<void> {
