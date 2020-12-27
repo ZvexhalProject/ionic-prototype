@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button color="dark" (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Productlist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let p of productlist;">
+      <ion-icon name="file-tray-full-outline" slot="start"></ion-icon>
+      <ion-label>
+        <div class="title">{{p.getProduktName()}}</div>
+        <div class="meta">Gewicht: {{p.getGewicht()}}</div>
+        <div class="meta">Einheit: {{p.getEinheit()}}</div>
+        <div class="meta">Menge: {{p.getMenge()}}</div>
+        <div class="meta">Kategorie: {{p.getKategorie()}}</div>
+        <div class="meta">Mindesthaltbarkeit: {{p.getMHD()}}</div>
+        <div class="meta">Bemerkung: {{p.getBemerkung()}}</div>
+      </ion-label>
+    </ion-item>
+   
+  </ion-list>
+</ion-content>

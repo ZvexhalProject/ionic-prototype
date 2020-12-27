@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button color="dark" (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Create Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="wrapper">
+    <div class="form-container">
+      <div class="errorMsg" *ngIf="errorMsg">{{errorMsg}}</div>
+        <ion-item>
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          <ion-label position="floating">Produktname</ion-label>
+          <ion-input [(ngModel)]="formFields.produktname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          <ion-label position="floating">Gewicht</ion-label>
+          <ion-input [(ngModel)]="formFields.gewicht"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          <ion-label position="floating">Einheit</ion-label>
+          <ion-input [(ngModel)]="formFields.einheit"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          <ion-label position="floating">Menge</ion-label>
+          <ion-input [(ngModel)]="formFields.menge"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          <ion-label position="floating">Kategorie</ion-label>
+          <ion-input [(ngModel)]="formFields.kategorie"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          <ion-label position="floating">Bemerkung</ion-label>
+          <ion-input [(ngModel)]="formFields.beme"></ion-input>
+        </ion-item>
+    </div>
+    <div class="buttons-container">
+      <ion-button (click)="createProductPressed()" color="primary" expand="full" >Create</ion-button>
+    </div>
+  </div>
+</ion-content>

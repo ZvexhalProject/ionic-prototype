@@ -1,0 +1,28 @@
+.wrapper{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2%;
+
+    .form-container{
+        height: 90%;
+        width: 100%;
+        padding:20px;
+
+        .errorMsg{
+            padding-bottom: 10px;
+            color: red;
+        }
+    }
+
+    .buttons-container{
+        height: 10%;
+        width: 100%;
+
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+}

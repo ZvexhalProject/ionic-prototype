@@ -1,0 +1,45 @@
+.wrapper {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    .title-container {
+        height: 30%;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-container {
+        height: 70%;
+        width: 100%;
+        
+        .form-container {
+            height: 50%;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .errorMsg{
+                padding-bottom: 10px;
+                color: red;
+            }
+        }
+        
+        .button-container {
+            height: 50%;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
